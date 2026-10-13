@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Geist", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-cream: #f1efe7;
+  --color-ivory: #faf9f5;
+  --color-paper: #ffffff;
+  --color-ink: #191919;
+  --color-charcoal: #161616;
+  --color-void: #0b0b0d;
+  --color-muted: #85837f;
+  --color-soft: #c6c3bd;
+  --color-line: #e5e3dd;
+  --color-lavender: #9890ff;
+  --color-blue: #6c96ea;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  button:not(:disabled), [role="button"]:not(:disabled) { cursor: pointer; }
+  :focus-visible { outline: 2px solid var(--color-blue); outline-offset: 3px; }
+}
+
+.display { font-size: clamp(3.1rem, 8.2vw, 7.4rem); line-height: 0.9; letter-spacing: -0.048em; font-weight: 500; }
+.display-md { font-size: clamp(2.4rem, 5vw, 4.6rem); line-height: 0.96; letter-spacing: -0.04em; font-weight: 500; }
+.eyebrow { font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-muted); font-weight: 500; }
+.glass-card { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); box-shadow: 0 18px 50px rgba(0,0,0,0.28); backdrop-filter: blur(18px); color: white; }
+.surface { background: var(--color-paper); border: 1px solid var(--color-line); border-radius: 1.5rem; box-shadow: 0 16px 40px rgba(22,22,22,0.04); }
+.field { width: 100%; border-radius: 0.9rem; border: 1px solid var(--color-line); background: var(--color-ivory); color: var(--color-ink); padding: 0.85rem 1rem; font-size: 0.95rem; }
+.field:focus { outline: none; border-color: var(--color-charcoal); background: white; }
+.atmosphere {
+  background:
+    radial-gradient(900px 420px at 50% -10%, rgba(152, 144, 255, 0.18), transparent 60%),
+    radial-gradient(700px 380px at 80% 0%, rgba(108, 150, 234, 0.16), transparent 55%),
+    var(--color-cream);
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
